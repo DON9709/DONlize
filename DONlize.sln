@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DONlize", "DONlize\DONlize.csproj", "{59C9C4AF-621B-4B3D-9A77-A6A5A786A620}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59C9C4AF-621B-4B3D-9A77-A6A5A786A620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59C9C4AF-621B-4B3D-9A77-A6A5A786A620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59C9C4AF-621B-4B3D-9A77-A6A5A786A620}.Debug|x64.ActiveCfg = Debug|x64
+		{59C9C4AF-621B-4B3D-9A77-A6A5A786A620}.Debug|x64.Build.0 = Debug|x64
+		{59C9C4AF-621B-4B3D-9A77-A6A5A786A620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59C9C4AF-621B-4B3D-9A77-A6A5A786A620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59C9C4AF-621B-4B3D-9A77-A6A5A786A620}.Release|x64.ActiveCfg = Release|x64
+		{59C9C4AF-621B-4B3D-9A77-A6A5A786A620}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C621A94F-838E-4843-8FC5-F03C122B6BCA}
+	EndGlobalSection
+EndGlobal
