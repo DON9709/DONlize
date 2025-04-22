@@ -1,3 +1,11 @@
+C:\DONlize\DONlize\obj\Debug\DONlize.csproj.AssemblyReference.cache
+C:\DONlize\DONlize\obj\Debug\DONlize.ExcelExport.resources
+C:\DONlize\DONlize\obj\Debug\DONlize.CategorySelectionForm.resources
+C:\DONlize\DONlize\obj\Debug\DONlize.ParameterEditForm.resources
+C:\DONlize\DONlize\obj\Debug\DONlize.ParameterSelectionForm.resources
+C:\DONlize\DONlize\obj\Debug\DONlize.ParameterSelectorControl.resources
+C:\DONlize\DONlize\obj\Debug\DONlize.csproj.GenerateResource.cache
+C:\DONlize\DONlize\obj\Debug\DONlize.csproj.CoreCompileInputs.cache
 C:\DONlize\DONlize\bin\Debug\DONlize.dll.config
 C:\DONlize\DONlize\bin\Debug\DONlize.dll
 C:\DONlize\DONlize\bin\Debug\DONlize.pdb
@@ -114,13 +122,6 @@ C:\DONlize\DONlize\bin\Debug\pt-BR\AdWindows.resources.dll
 C:\DONlize\DONlize\bin\Debug\ru-RU\AdWindows.resources.dll
 C:\DONlize\DONlize\bin\Debug\zh-CN\AdWindows.resources.dll
 C:\DONlize\DONlize\bin\Debug\zh-TW\AdWindows.resources.dll
-C:\DONlize\DONlize\obj\Debug\DONlize.csproj.AssemblyReference.cache
-C:\DONlize\DONlize\obj\Debug\DONlize.ExcelExport.resources
-C:\DONlize\DONlize\obj\Debug\DONlize.CategorySelectionForm.resources
-C:\DONlize\DONlize\obj\Debug\DONlize.ParameterEditForm.resources
-C:\DONlize\DONlize\obj\Debug\DONlize.ParameterSelectionForm.resources
-C:\DONlize\DONlize\obj\Debug\DONlize.csproj.GenerateResource.cache
-C:\DONlize\DONlize\obj\Debug\DONlize.csproj.CoreCompileInputs.cache
 C:\DONlize\DONlize\obj\Debug\DONlize.csproj.Up2Date
 C:\DONlize\DONlize\obj\Debug\DONlize.dll
 C:\DONlize\DONlize\obj\Debug\DONlize.pdb

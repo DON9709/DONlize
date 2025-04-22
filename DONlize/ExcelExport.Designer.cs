@@ -1,16 +1,24 @@
-﻿namespace DONlize
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace DONlize
 {
-    partial class ExcelExport
+    partial class ExcelExport : Form
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private CheckBox checkBoxAll;
+        private CheckBox checkBoxSelectedElements;
+        private CheckBox checkBoxCurrentView;
+        private Button btnNext;
+        private Button btnCancel;
 
         /// <summary>
-        /// Clean up any resources being used.
+        /// 리소스 정리
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,81 +28,82 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Windows Form 디자이너 생성 코드
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.EntireModel = new System.Windows.Forms.CheckBox();
-            this.Selected = new System.Windows.Forms.CheckBox();
-            this.CurrentView = new System.Windows.Forms.CheckBox();
+            this.checkBoxAll = new System.Windows.Forms.CheckBox();
+            this.checkBoxSelectedElements = new System.Windows.Forms.CheckBox();
+            this.checkBoxCurrentView = new System.Windows.Forms.CheckBox();
             this.btnNext = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // EntireModel
+            // checkBoxAll
             // 
-            this.EntireModel.AutoSize = true;
-            this.EntireModel.Location = new System.Drawing.Point(44, 69);
-            this.EntireModel.Name = "EntireModel";
-            this.EntireModel.Size = new System.Drawing.Size(76, 16);
-            this.EntireModel.TabIndex = 1;
-            this.EntireModel.Text = "모델 전체";
-            this.EntireModel.UseVisualStyleBackColor = true;
+            this.checkBoxAll.AutoSize = true;
+            this.checkBoxAll.Location = new System.Drawing.Point(26, 26);
+            this.checkBoxAll.Name = "checkBoxAll";
+            this.checkBoxAll.Size = new System.Drawing.Size(73, 17);
+            this.checkBoxAll.TabIndex = 0;
+            this.checkBoxAll.Text = "모델 전체";
+            this.checkBoxAll.UseVisualStyleBackColor = true;
             // 
-            // Selected
+            // checkBoxSelectedElements
             // 
-            this.Selected.AutoSize = true;
-            this.Selected.Location = new System.Drawing.Point(190, 69);
-            this.Selected.Name = "Selected";
-            this.Selected.Size = new System.Drawing.Size(88, 16);
-            this.Selected.TabIndex = 2;
-            this.Selected.Text = "선택한 요소";
-            this.Selected.UseVisualStyleBackColor = true;
+            this.checkBoxSelectedElements.AutoSize = true;
+            this.checkBoxSelectedElements.Location = new System.Drawing.Point(111, 26);
+            this.checkBoxSelectedElements.Name = "checkBoxSelectedElements";
+            this.checkBoxSelectedElements.Size = new System.Drawing.Size(84, 17);
+            this.checkBoxSelectedElements.TabIndex = 1;
+            this.checkBoxSelectedElements.Text = "선택한 요소";
+            this.checkBoxSelectedElements.UseVisualStyleBackColor = true;
             // 
-            // CurrentView
+            // checkBoxCurrentView
             // 
-            this.CurrentView.AutoSize = true;
-            this.CurrentView.Location = new System.Drawing.Point(336, 69);
-            this.CurrentView.Name = "CurrentView";
-            this.CurrentView.Size = new System.Drawing.Size(64, 16);
-            this.CurrentView.TabIndex = 3;
-            this.CurrentView.Text = "현재 뷰";
-            this.CurrentView.UseVisualStyleBackColor = true;
+            this.checkBoxCurrentView.AutoSize = true;
+            this.checkBoxCurrentView.Location = new System.Drawing.Point(214, 26);
+            this.checkBoxCurrentView.Name = "checkBoxCurrentView";
+            this.checkBoxCurrentView.Size = new System.Drawing.Size(62, 17);
+            this.checkBoxCurrentView.TabIndex = 2;
+            this.checkBoxCurrentView.Text = "현재 뷰";
+            this.checkBoxCurrentView.UseVisualStyleBackColor = true;
             // 
             // btnNext
             // 
-            this.btnNext.Location = new System.Drawing.Point(365, 146);
+            this.btnNext.Location = new System.Drawing.Point(197, 69);
             this.btnNext.Name = "btnNext";
-            this.btnNext.Size = new System.Drawing.Size(75, 23);
-            this.btnNext.TabIndex = 4;
+            this.btnNext.Size = new System.Drawing.Size(64, 22);
+            this.btnNext.TabIndex = 3;
             this.btnNext.Text = "Next";
             this.btnNext.UseVisualStyleBackColor = true;
-            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(49, 69);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(64, 22);
+            this.btnCancel.TabIndex = 4;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // ExcelExport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(487, 207);
+            this.ClientSize = new System.Drawing.Size(317, 113);
+            this.Controls.Add(this.checkBoxAll);
+            this.Controls.Add(this.checkBoxSelectedElements);
+            this.Controls.Add(this.checkBoxCurrentView);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.CurrentView);
-            this.Controls.Add(this.Selected);
-            this.Controls.Add(this.EntireModel);
+            this.Controls.Add(this.btnCancel);
             this.Name = "ExcelExport";
-            this.Text = "ExcelExport";
+            this.Text = "Excel Export";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckBox EntireModel;
-        private System.Windows.Forms.CheckBox Selected;
-        private System.Windows.Forms.CheckBox CurrentView;
-        private System.Windows.Forms.Button btnNext;
     }
 }

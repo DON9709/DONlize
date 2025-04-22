@@ -1,6 +1,8 @@
 ﻿using Autodesk.Revit.Attributes;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.DB;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DONlize
 {
@@ -9,13 +11,20 @@ namespace DONlize
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
-            Document doc = commandData.Application.ActiveUIDocument.Document;
+            UIDocument uidoc = commandData.Application.ActiveUIDocument;
+            Document doc = uidoc.Document;
 
-            ExcelExport form = new ExcelExport(doc); // ← 여기서 넘겨주는 거야!
+            // 선택된 요소 가져오기
+            List<Element> selectedElements = uidoc.Selection
+                .GetElementIds()
+                .Select(id => doc.GetElement(id))
+                .Where(e => e != null)
+                .ToList();
+
+            ExcelExport form = new ExcelExport(doc, selectedElements);
             form.ShowDialog();
 
             return Result.Succeeded;
         }
-
     }
 }

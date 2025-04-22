@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using Autodesk.Revit.DB;
 
@@ -6,33 +8,53 @@ namespace DONlize
 {
     public partial class ExcelExport : System.Windows.Forms.Form
     {
-        private Document _doc;
+        private readonly Document _doc;
+        private readonly List<Element> _elements;
 
-        public ExcelExport(Document doc)
+        public bool ExportAll => checkBoxAll.Checked;
+        public bool ExportSelected => checkBoxSelectedElements.Checked;
+        public bool ExportCurrentView => checkBoxCurrentView.Checked;
+
+        public ExcelExport(Document doc, List<Element> elements)
         {
             InitializeComponent();
+
             _doc = doc;
+            _elements = elements;
+
+            // 단일 선택 로직
+            checkBoxAll.CheckedChanged += OnCheckChanged;
+            checkBoxSelectedElements.CheckedChanged += OnCheckChanged;
+            checkBoxCurrentView.CheckedChanged += OnCheckChanged;
+
+            // 취소 버튼
+            btnCancel.Click += (s, e) => DialogResult = DialogResult.Cancel;
+
+            // Next 버튼
+            btnNext.Click += (s, e) =>
+            {
+                var categoryForm = new CategorySelectionForm(_doc, _elements);
+                var result = categoryForm.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    var selected = categoryForm.SelectedCategories;
+                    // TODO: 이후 Excel 내보내기 로직 추가
+                    DialogResult = DialogResult.OK; // 이 시점에만 창 닫기
+                }
+
+                // Cancel일 경우 ExcelExport는 계속 열려 있음
+            };
         }
 
-        private void btnNext_Click(object sender, EventArgs e)
+        private void OnCheckChanged(object sender, EventArgs e)
         {
-            if (EntireModel.Checked)
+            var changed = sender as CheckBox;
+            if (changed.Checked)
             {
-                // 모델 전체 선택 시 → 카테고리 선택 폼 띄우기
-                var catForm = new CategorySelectionForm(_doc);
-                if (catForm.ShowDialog() == DialogResult.OK)
-                {
-                    // 선택된 카테고리 확인 (일단 메시지박스로 확인)
-                    var selected = catForm.SelectedCategories;
-                    string msg = "선택된 카테고리:\n" + string.Join("\n", selected);
-                    MessageBox.Show(msg, "카테고리 확인");
-
-                    // 다음 단계 (파라메터 선택 폼)으로 이어질 예정
-                }
-            }
-            else
-            {
-                MessageBox.Show("현재는 '모델 전체'만 구현되어 있습니다.", "알림");
+                if (changed != checkBoxAll) checkBoxAll.Checked = false;
+                if (changed != checkBoxSelectedElements) checkBoxSelectedElements.Checked = false;
+                if (changed != checkBoxCurrentView) checkBoxCurrentView.Checked = false;
             }
         }
     }
